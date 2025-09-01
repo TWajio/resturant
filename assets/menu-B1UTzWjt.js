@@ -2,8 +2,8 @@ const a=[{name:"Fish Burger",image:"/resturant/images/items/fish-burger.png",des
       <div class="flex flex-col w-[80%] h-full items-center m-4" data-aos="fade-up">  
         <img src="${i.image}" alt="${i.name}" class="w-full object-contain flex-grow">
         <div class="w-full pl-4 pb-2">
-          <p class="text-[black] text-[20px] sm:text-mid font-semibold">${i.name}</p>
-          <h1 class="text-secondary text-[20px] sm:text-mid font-semibold">${i.price}tk</h1>
+          <p class="text-[black] text-sm sm:text-mid font-semibold">${i.name}</p>
+          <h1 class="text-secondary text-sm sm:text-mid font-semibold">${i.price}tk</h1>
         </div>
       </div>
     `,s.addEventListener("click",()=>{localStorage.setItem("selectedItem",JSON.stringify({name:i.name,description:i.description,calories:i.calories,price:i.price,category:i.category})),window.location.href="item.html"}),r.appendChild(s)}),document.getElementById("menu-count").textContent=c.length}document.querySelectorAll(".logo-item").forEach(e=>{e.addEventListener("click",()=>{const r=e.querySelector("p").textContent.toLowerCase();t(r)})});function g(e){const r=e.target.value;if(r)switch(r){case"name":n();break;case"price":o();break;case"popularity":p();break}}function n(){a.sort((e,r)=>e.name.localeCompare(r.name)),t()}function o(){a.sort((e,r)=>e.price-r.price),t()}function p(){a.sort((e,r)=>r.popularity-e.popularity),t()}document.addEventListener("DOMContentLoaded",()=>{document.getElementById("menu-count").textContent=l(),t()});window.sortByName=n;window.sortByPrice=o;window.sortByPopularity=p;window.handleSort=g;
